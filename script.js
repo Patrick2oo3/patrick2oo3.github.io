@@ -71,3 +71,25 @@ function createSnowflake() {
 
 // Create a new snowflake every 300ms
 setInterval(createSnowflake, 300);
+
+function summonSanta() {
+    // Create the container if it doesn't exist
+    let container = document.querySelector('.santa-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'santa-container';
+        container.innerHTML = '<span class="santa-sleigh">🎅🛷🦌</span>';
+        document.body.appendChild(container);
+    }
+
+    // Reset and start animation
+    container.classList.remove('animate-santa');
+    void container.offsetWidth; // Trigger reflow to restart animation
+    container.classList.add('animate-santa');
+}
+
+// Fly Santa across the screen immediately on load...
+setTimeout(summonSanta, 3000); 
+
+// ...and then every 2 minutes
+setInterval(summonSanta, 120000);
