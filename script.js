@@ -47,4 +47,27 @@ function handleContact(event) {
     status.innerText = "Thank you! Your message has been sent.";
     status.classList.remove('hidden');
     document.getElementById('contact-form').reset();
+
 }
+
+function createSnowflake() {
+    const snowflake = document.createElement('div');
+    snowflake.classList.add('snowflake');
+    snowflake.innerHTML = '❄'; // You can also use '❅' or '❆'
+    
+    // Randomize position and appearance
+    snowflake.style.left = Math.random() * 100 + 'vw';
+    snowflake.style.animationDuration = Math.random() * 3 + 7 + 's'; // Between 7-10s
+    snowflake.style.opacity = Math.random();
+    snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+    
+    document.body.appendChild(snowflake);
+    
+    // Remove snowflake after it falls to keep the site fast
+    setTimeout(() => {
+        snowflake.remove();
+    }, 10000);
+}
+
+// Create a new snowflake every 300ms
+setInterval(createSnowflake, 300);
