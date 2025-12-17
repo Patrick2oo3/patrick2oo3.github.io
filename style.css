@@ -136,3 +136,19 @@ input, textarea {
     animation: fly-across 12s linear forwards;
 }
 
+#countdown-container {
+    text-align: center;
+    background: var(--dark-green);
+    color: var(--gold);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+#timer {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
